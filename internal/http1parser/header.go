@@ -1,7 +1,7 @@
 package http1parser
 
 import (
-	"errors"
+	"github.com/pkg/errors"
 	"net/textproto"
 	"strings"
 )

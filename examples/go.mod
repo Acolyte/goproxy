@@ -5,7 +5,6 @@ go 1.20
 require (
 	github.com/coder/websocket v1.8.12
 	github.com/Acolyte/goproxy v1.5.0
-	github.com/Acolyte/goproxy/ext v0.0.0-20250117123040-e9229c451ab8
 	github.com/inconshreveable/go-vhost v1.0.0
 )
 

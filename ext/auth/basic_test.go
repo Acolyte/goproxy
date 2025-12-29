@@ -17,9 +17,9 @@ import (
 	"github.com/Acolyte/goproxy/ext/auth"
 )
 
-type ConstantHanlder string
+type ConstantHandler string
 
-func (h ConstantHanlder) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+func (h ConstantHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	io.WriteString(w, string(h))
 }
 
@@ -42,7 +42,7 @@ func times(n int, s string) string {
 
 func TestBasicConnectAuthWithCurl(t *testing.T) {
 	expected := ":c>"
-	background := httptest.NewTLSServer(ConstantHanlder(expected))
+	background := httptest.NewTLSServer(ConstantHandler(expected))
 	defer background.Close()
 	proxy := goproxy.NewProxyHttpServer()
 	proxy.OnRequest().HandleConnect(auth.BasicConnect("my_realm", func(user, passwd string) bool {
@@ -70,7 +70,7 @@ func TestBasicConnectAuthWithCurl(t *testing.T) {
 
 func TestBasicAuthWithCurl(t *testing.T) {
 	expected := ":c>"
-	background := httptest.NewServer(ConstantHanlder(expected))
+	background := httptest.NewServer(ConstantHandler(expected))
 	defer background.Close()
 	proxy := goproxy.NewProxyHttpServer()
 	proxy.OnRequest().Do(auth.Basic("my_realm", func(user, passwd string) bool {
@@ -97,7 +97,7 @@ func TestBasicAuthWithCurl(t *testing.T) {
 
 func TestBasicAuth(t *testing.T) {
 	expected := "hello"
-	background := httptest.NewServer(ConstantHanlder(expected))
+	background := httptest.NewServer(ConstantHandler(expected))
 	defer background.Close()
 	proxy := goproxy.NewProxyHttpServer()
 	proxy.OnRequest().Do(auth.Basic("my_realm", func(user, passwd string) bool {

@@ -21,7 +21,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/elazarl/goproxy"
+	"github.com/Acolyte/goproxy"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

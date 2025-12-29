@@ -16,8 +16,8 @@ import (
 	"sync"
 	"sync/atomic"
 
-	"github.com/elazarl/goproxy/internal/http1parser"
-	"github.com/elazarl/goproxy/internal/signer"
+	"github.com/Acolyte/goproxy/internal/http1parser"
+	"github.com/Acolyte/goproxy/internal/signer"
 )
 
 type ConnectActionLiteral int

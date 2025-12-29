@@ -6,8 +6,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/elazarl/goproxy"
-	"github.com/elazarl/goproxy/ext/limitation"
+	"github.com/Acolyte/goproxy"
+	"github.com/Acolyte/goproxy/ext/limitation"
 )
 
 func TestConcurrentRequests(t *testing.T) {

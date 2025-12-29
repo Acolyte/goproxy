@@ -6,7 +6,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/elazarl/goproxy/regretable"
+	"github.com/Acolyte/goproxy/regretable"
 )
 
 func assertEqual(t *testing.T, expected, actual string) {

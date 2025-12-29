@@ -3,8 +3,8 @@ package main
 import (
 	"context"
 	"crypto/tls"
+	"github.com/Acolyte/goproxy"
 	"github.com/coder/websocket"
-	"github.com/elazarl/goproxy"
 	"log"
 	"net/http"
 	"net/url"

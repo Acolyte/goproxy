@@ -587,7 +587,7 @@ func (proxy *ProxyHttpServer) NewConnectDialToProxyWithHandler(
 					return nil, err
 				}
 				_ = c.Close()
-				return nil, errors.New("proxy refused connection" + string(resp))
+				return nil, fmt.Errorf("From (%s/%s) - proxy refused connection: %s", addr, network, string(resp))
 			}
 			return c, nil
 		}
@@ -634,7 +634,7 @@ func (proxy *ProxyHttpServer) NewConnectDialToProxyWithHandler(
 					return nil, err
 				}
 				_ = c.Close()
-				return nil, errors.New("proxy refused connection" + string(body))
+				return nil, fmt.Errorf("From (%s/%s) - proxy refused connection: %s", addr, network, string(body))
 			}
 			return c, nil
 		}
